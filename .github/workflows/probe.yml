@@ -25,4 +25,5 @@ jobs:
       - name: gate
         run: |
           if [ -f FAIL ]; then echo "FAIL marker present: this entry must be ejected"; exit 1; fi
+          if [ -f f.txt ] && [ -f g.txt ]; then echo "semantic conflict: f.txt and g.txt together"; exit 1; fi
           echo ok
